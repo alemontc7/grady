@@ -1,0 +1,262 @@
+:root {
+    --ghost-white: #eef0f7;
+    --kepel: #37B09E;
+    --babyblue: #93C5E2;
+    --puce: #CE8D9A;
+    --paledogwood: #E8C6C3;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--ghost-white);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    gap: 10px
+
+}
+
+.dashboard-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.icon-container{
+    width: 15%;
+    height: 10vh;
+    background-color: var(--kepel);
+    color: white;
+    font-family: "Kaushan Script", cursive;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-name-container {
+    width: 52.5%;
+    height: 10vh;
+    background-color: var(--kepel);
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.empty-container
+{
+    width: 30%;
+    height: 10vh;
+    background-color: var(--babyblue);
+    border-radius: 15px;
+
+}
+
+.cards-container{
+    width: 100%;
+    height: 75vh;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+}
+
+.subjects-container{
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;    
+    font-family: 'Lato';
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subjects-cards{
+    width: 80%;
+    height: 65%;
+    padding: 20px;
+}
+
+.subjects-cards h3{
+    border-bottom: 1px solid black;
+    padding: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+.add-new-subject-section{
+    height: 5%;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.add-new-subject-section button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-family: 'Lato';
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--puce);
+    transition: background-color 0.3s ease;
+}
+
+
+.add-new-subject-section button:hover {
+    background-color: darkred;
+}
+
+.add-new-subject-section button:active {
+    background-color: brown;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.other-cards-container{
+    width: 65%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    /**/
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato';
+    color: rgb(102, 102, 102);
+}
+
+/*Experimental*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 50px;
+    margin: 10% auto; 
+    border: 1px solid #888;
+    width: 25%; 
+    height: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content:space-between;
+    gap: 10px;
+}
+
+.modal-header
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    color: #888;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register-subject-form{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    padding: 0;
+}
+
+.form-logo{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "Kaushan Script", cursive;
+    color: var(--kepel );
+
+}
+
+.form-group{
+    font-size: 15px;
+    font-family: 'Lato';
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    gap: 5px;
+    color: black;
+    width: 75%;
+}
+.form-control{
+    border-radius: 5px;
+    border: 0.6px solid gray;
+    padding: 10px;
+    color: gray;
+}
+
+.register-subject-form button{
+    border-radius: 5px;
+    background-color: var(--puce);
+    width: 25%;
+    font-size: 15px;
+}

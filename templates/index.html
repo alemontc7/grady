@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='index-styles.css') }}">
+    <title>Grady</title>
+</head>
+<body>
+    <div class="dashboard-header">
+        <div class="icon-container"><h1>Grady.io</h1></div>
+        <div class="user-name-container">
+            <h1>Bienvenido Alejandro</h1>
+        </div>
+        <div class="empty-container">
+        </div>
+    </div>
+    <div class="cards-container">
+        <div class="subjects-container">
+            <h1>Subjects</h1>
+            <div class="subjects-cards">
+                {% for subject_name in subjects %}
+                    <div class="subject">
+                        <h3>{{ subject_name }}</h3>
+                        <button>See More</button>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="add-new-subject-section">
+                <button onclick="openModal()">+</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Register a new subject</h2>
+                            <span class="close" onclick="closeModal()">&times;</span>
+                        </div>
+                        
+                        <div class="form-logo">
+                            <h2>Grady.io</h2>
+                        </div>
+
+                        <form class="register-subject-form" action="/register_subject"  method="post">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Subject Name</label>
+                              <input type="text" class="form-control" name="subject_name" aria-describedby="subject_name" placeholder="Subject Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Description</label>
+                              <input type="text" class="form-control" name="subject_description" placeholder="Description">
+                            </div>
+                            <button type="submit">Submit</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="other-cards-container">
+            <h2>We are still developing this...</h2>
+            <h2>Be patient 😊</h2>
+        </div>
+    </div>
+    <script>
+        
+        function hideModalOnLoad() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+        document.addEventListener('DOMContentLoaded', hideModalOnLoad);
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+        
+    </script>
+</body>
+</html>
